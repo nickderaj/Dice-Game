@@ -13,3 +13,20 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
 let scores, currentScore, activePlayer, playing;
+
+const init = function () {
+  currentScore = 0;
+  scores = [0, 0];
+  activePlayer = 0;
+  playing = true;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+  document.querySelector(`#score--0`).textContent = scores[0];
+  document.querySelector(`#score--1`).textContent = scores[1];
+  document.querySelector(`.player--0`).classList.remove("player--winner");
+  document.querySelector(`.player--1`).classList.remove("player--winner");
+};
+
+init();
